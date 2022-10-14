@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu.css">
+    <script src="https://kit.fontawesome.com/d7854b1267.js" crossorigin="anonymous"></script>
+    <title>D-Library</title>
+</head>
+<body>
+<div class="contenedor">  
+        <div class="title"><h1>D-Library</h1></div>
+        <div class="form-container" id="form">
+        <div class="formulario">
+            <div class="formtop">
+                <a href="/menu" id="a2"><div class="btn-cerrar" id="btn-c">
+                    <button id="boton" class="boton"><i class="fa-solid fa-xmark"></i></button>
+                </div></a>
+                <h2 id="title-form">Nuevo libro</h2>
+                <p>Aqui debe ingresar los datos del libro</p>
+            </div>
+            <form action="" method="post">
+                <input type="text" name="namelib" id="namelib" placeholder="Ingrese el Titulo">
+                <input type="text" name="desc" id="desc" placeholder="Ingrese una descripción">
+                <select name="categoria" id="categoria">
+                    <option value="">Categorias</option>
+                    <option value="hist">Historia</option>
+                    <option value="lit">Literatura</option>
+                    <option value="mat">Matematicas</option>
+                    <option value="bio">Biologia</option>
+                    <option value="otro">Otros</option>
+                </select>
+                <div class="file-lib">
+                    <input type="file" name="lib" id="lib">
+                </div>
+                <div class="btn-send">
+                    <button type="submit" class="btn-libro btn-a"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </form>
+            </div>
+            </div>
+    </div>
+</body>
+</html>

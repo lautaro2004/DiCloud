@@ -1,0 +1,80 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-image: url(./img/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 99vh;
+}
+.container{
+    width: 85%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.logo{
+    display: flex;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #212529;
+    text-align: center;
+    font-size: 22px;
+    
+}
+.boton{
+    display: flex;
+    width: 40%;
+    height: 40px;
+    background-color: #212529;
+    border-radius: 15px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    align-items: center;
+    justify-content: center;
+}
+.boton button{
+    background: none;
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+.boton a{
+    text-decoration: none;
+    color: #FFFFFF;
+    width: 100%;
+}
+.boton:hover{
+    background-color: #353b41;
+    transition: 0.3s;
+}
+footer{
+    height: 19%;
+    width: 100%;
+}
+.logo2 img{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+}
