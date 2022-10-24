@@ -11,14 +11,14 @@
 		function conectar(){
 
 			try{
-			$conexion = "mysql:host=" . $this->$hostname . "; dbname=" . $this->basededatos . "; charset=" . this->$charset;
+			$conexion = "mysql:host=" . $this->$hostname . "; dbname=" . $this->basededatos . "; charset=" . $this->$charset;
 
 			$opciones =[
 				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 				PDO::ATTR_EMULATE_PREPARES => false
 			];
 
-			$pdo = new PDO($conexion, $this->$usuario, $this->$contrasena, $options);
+			$pdo = new PDO($conexion, $this->$usuario, $this->$contrasena, $opciones);
 
 			return $pdo;
 			} catch(PDOException $e){
