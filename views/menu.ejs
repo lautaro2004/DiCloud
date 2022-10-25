@@ -14,8 +14,37 @@
 <body>
     <div class="contenedor">  
         <div class="title"><h1>D-Library</h1></div>
+        <div class="form-container" id="form-cont">
+            <div class="formulario">
+                <div class="formtop">
+                    <div class="btn-cerrar" id="btn-c">
+                        <button id="boton" class="boton" onclick="ocultar()"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <h2 id="title-form">Nuevo libro</h2>
+                    <p>Aqui debe ingresar los datos del libro</p>
+                </div>
+                <form action="" method="post">
+                    <input type="text" name="namelib" id="namelib" placeholder="Ingrese el Titulo">
+                    <input type="text" name="desc" id="desc" placeholder="Ingrese una descripción">
+                    <select name="categoria" id="categoria">
+                        <option value="">Categorias</option>
+                        <option value="hist">Historia</option>
+                        <option value="lit">Literatura</option>
+                        <option value="mat">Matematicas</option>
+                        <option value="bio">Biologia</option>
+                        <option value="otro">Otros</option>
+                    </select>
+                    <div class="file-lib">
+                        <input type="file" name="lib" id="lib">
+                    </div>
+                    <div class="btn-send">
+                        <button type="submit" class="btn-libro btn-a"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </form>
+                </div>
+                </div>
         <div class="newlib">
-            <h3>Agregar libro</h3><a href="/subir"><button id="boton" class="boton"><i class="fa-solid fa-plus"></i></button></a>
+            <h3>Agregar libro</h3><button id="boton" class="boton" onclick="mostrar()"><i class="fa-solid fa-plus"></i></button>
         </div>
         <div class="texto">
            <h3>Libros disponibles</h3>
@@ -61,8 +90,16 @@
             </div>
         </div>
     </div>
-    <div class="volver">
-        <a href="/"><img src="" alt=""></a>
-    </div>
+    <footer>
+        <a href="/"><i class="fa-solid fa-arrow-rotate-left"></i></a>
+    </footer>
+    <script>
+function ocultar() {
+        document.getElementById("form-cont").style.display = "none";
+      }
+    function mostrar() {
+        document.getElementById("form-cont").style.display = "flex";
+      } 
+    </script>
 </body>
 </html>
