@@ -11,7 +11,7 @@
 		function conectar(){
 
 			try{
-			$conexion = "mysql:host=" . $this->$hostname . "; dbname=" . $this->basededatos . "; charset=" . $this->$charset;
+			$conexion = "mysql:host=" . $this->hostname . "; dbname=" . $this->basededatos . "; charset=" . $this->charset;
 
 			$opciones =[
 				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
