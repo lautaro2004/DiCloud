@@ -24,9 +24,9 @@
                     <p>Aqui debe ingresar los datos del libro</p>
                 </div>
                 <form action="" method="post">
-                    <input type="text" name="namelib" id="namelib" placeholder="Ingrese el Titulo">
+                    <input type="text" name="namelib" id="namelib" placeholder="Ingrese el Titulo" required>
                     <input type="text" name="desc" id="desc" placeholder="Ingrese una descripción">
-                    <select name="categoria" id="categoria">
+                    <select name="categoria" id="categoria" required>
                         <option value="">Categorias</option>
                         <option value="hist">Historia</option>
                         <option value="lit">Literatura</option>
@@ -35,7 +35,7 @@
                         <option value="otro">Otros</option>
                     </select>
                     <div class="file-lib">
-                        <input type="file" name="lib" id="lib">
+                        <input type="file" name="lib" id="lib" required>
                     </div>
                     <div class="btn-send">
                         <button type="submit" class="btn-libro btn-a"><i class="fa-solid fa-plus"></i></button>
