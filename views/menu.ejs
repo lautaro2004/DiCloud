@@ -49,12 +49,43 @@
         <div class="texto">
            <h3>Libros disponibles</h3>
         </div> 
+
+        <!--Barra de Busqueda-->
         <div class="buscar">
-            <input type="search" placeholder="Buscar">
+            <input type="search" placeholder="Buscar" id="barraBusqueda"></input>
             <div class="btn-lupa">
                 <i class="fas fa-search"></i>
             </div> 
         </div>
+        <script>
+            $(buscarDatosBarra());
+
+            function buscarDatosBarra(consulta){
+                $.ajax({
+                    url: 'busqueda.php', 
+                    type: 'POST',
+                    dataType: 'default',
+                    data: {consulta: consulta},
+                })
+                .done(function(respuesta) {
+                    $('#datos').html(respuesta); 
+                })
+                .fail(function() {
+                    console.log("error"); 
+                })
+            }
+
+        $(document).on('keyup, '#barraBusqueda', function(){
+            var valor = $(this).val(); 
+
+            if(valor != 0){
+                buscarDatosBarra(valor); 
+            } else {
+                buscarDatosBarra();
+            }
+        });  
+        </script>
+        <!--Fin barra de busqueda-->
         <div class="libros">
             <div class="lib">
                 <div class="foto"></div>
