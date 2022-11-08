@@ -53,37 +53,46 @@
         <!--Barra de Busqueda-->
         <div class="buscar">
             <input type="search" placeholder="Buscar" id="barraBusqueda"></input>
+            <span id="resultados_busqueda"></span> 
             <div class="btn-lupa">
                 <i class="fas fa-search"></i>
             </div> 
         </div>
         <script>
-            $(buscarDatosBarra());
+            function cargar_datos(query =''){
+                fetch('/get_data?search_query='+query+'').then(function(response){
+                //convierte los datos de la bd a un archivo json 
+                    return response.json();
+                }).then(function(responseData){
+                    //muestra el resultado de la busqueda
+                    var html = '<ul class="list-group">'; 
+                    
+                    if(responseData.lenght > 0)
+                    {
+                        for(var count = 0; count < responseData.lenght; count++)
+                        { //selecciona y busca lo que realmente queremos
+                            var REGEX = new RegExp('('+query+')', 'gi'); 
+                            //Esto permitiria mostrar en tiempo real los titutlos de los libros
+                            html += '<a href="#" class="list-group-item list-group-item-action">'+responseData[count].//aca iria la "variable" de la db que almacena el titulo del libro
+                                .replace(REGEX, '<span class="text-primary fw-bold">$1</span>')+'</a>';
+                        }
+                    }
+                        html +='</ul>'
 
-            function buscarDatosBarra(consulta){
-                $.ajax({
-                    url: 'busqueda.php', 
-                    type: 'POST',
-                    dataType: 'default',
-                    data: {consulta: consulta},
-                })
-                .done(function(respuesta) {
-                    $('#datos').html(respuesta); 
-                })
-                .fail(function() {
-                    console.log("error"); 
-                })
+                        document.getElementById('resultados_busqueda').innerHTML = html; 
+
+                }); 
             }
 
-        $(document).on('keyup, '#barraBusqueda', function(){
-            var valor = $(this).val(); 
+            var resultados_busqueda = document.getElementById('barraBusqueda');
+            //El proximo bloque de codigo se ejecutara luego de que 
+            //se detecte que algo sea escrito en el barra de busqueda
+            resultados_busqueda.onkeyup = function(){
+                var query = resultados_busqueda.value; 
 
-            if(valor != 0){
-                buscarDatosBarra(valor); 
-            } else {
-                buscarDatosBarra();
+                load_data(query); 
             }
-        });  
+            
         </script>
         <!--Fin barra de busqueda-->
         <div class="libros">
